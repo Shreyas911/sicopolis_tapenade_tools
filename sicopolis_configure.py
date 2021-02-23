@@ -36,7 +36,7 @@ with open('sico_configs.sh') as f:
             line = line.replace("/opt/netcdf","/usr")
             print(line)
         elif line.startswith('   LISHOME') == True:
-            line = line.replace("/opt/lis","/usr/local")
+            line = line.replace("/opt/lis","/lis-1.3.33/installation")
             print(line)
         new_file_lines.append(line)
 
