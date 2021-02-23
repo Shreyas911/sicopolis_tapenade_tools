@@ -33,7 +33,7 @@ RUN ldconfig
 RUN wget https://www.netlib.org/linalg/lis/lis-1.3.33.zip
 RUN unzip lis-1.3.33.zip
 WORKDIR /lis-1.3.33
-RUN ./configure --enable-omp --enable-fortran --enable-f90 --enable-mpi --prefix=/lis-1.3.33/installation/ && make && make check && make install
+RUN ./configure --enable-omp --enable-fortran --enable-f90 --enable-mpi --prefix=/lis-1.3.33/installation/ --enable-shared && make && make check && make install
 
 # SICOPOLIS
 WORKDIR /
