@@ -30,10 +30,10 @@ RUN echo "/usr/local/lib" > /etc/ld.so.conf.d/class.conf
 RUN ldconfig
 
 # LIS
-RUN wget https://www.netlib.org/linalg/lis/lis-1.3.33.zip
-RUN unzip lis-1.3.33.zip
-WORKDIR /lis-1.3.33
-RUN ./configure --enable-fortran --prefix=/lis-1.3.33/installation/ --enable-shared && make && make check && make install
+RUN wget https://www.ssisc.org/lis/dl/lis-2.0.30.zip
+RUN unzip lis-2.0.30.zip
+WORKDIR /lis-2.0.30
+RUN ./configure --enable-fortran --prefix=/lis-2.0.30/installation/ --enable-shared && make && make check && make install
 
 # SICOPOLIS
 WORKDIR /
