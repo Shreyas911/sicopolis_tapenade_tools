@@ -57,9 +57,9 @@ RUN pip3 install numpy matplotlib
 RUN pip3 install scipy
 RUN pip3 install h5py netCDF4
 
-
-
-
+# Update LD_LIBRARY_PATH for LIS
+ENV LD_LIBRARY_PATH="/lis-2.0.30/installation/lib:$LD_LIBRARY_PATH" 
+RUN ldconfig -v
 
 
 
