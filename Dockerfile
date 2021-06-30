@@ -24,6 +24,7 @@ RUN dnf -y --enablerepo="epel" install netcdf-devel netcdf-fortran-devel
 RUN dnf -y install java-11-openjdk-devel
 RUN dnf -y install gnuplot gdb glibc
 RUN dnf -y install unzip
+RUN dnf -y install valgrind
 
 # Register new libs installed into /usr/local/lib with linker
 RUN echo "/usr/local/lib" > /etc/ld.so.conf.d/class.conf
