@@ -1,6 +1,10 @@
 FROM centos:8
 MAINTAINER Shreyas Gaikwad <shreyas.gaikwad@.utexas.edu>
 
+RUN cd /etc/yum.repos.d/
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+
 # Define a user
 RUN useradd -u 2000 -m test
 
@@ -54,10 +58,12 @@ RUN source $HOME/.bashrc
 # Python
 WORKDIR /
 RUN dnf -y install python3 python3-pip
-RUN pip3 install numpy matplotlib 
+RUN pip3 install numpy
 RUN pip3 install scipy
-RUN pip3 install h5py netCDF4
 RUN pip3 install pytest
+
+# Alias python3 as python
+RUN echo "alias python=/usr/bin/python3" >> ~/.bash_profile
 
 # Update LD_LIBRARY_PATH for LIS
 ENV LD_LIBRARY_PATH="/lis-2.0.30/installation/lib:$LD_LIBRARY_PATH" 
