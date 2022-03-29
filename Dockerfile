@@ -1,3 +1,5 @@
+# Usage - docker run -it sicopolis_ad_v2 /bin/bash -l
+
 FROM centos:8
 MAINTAINER Shreyas Gaikwad <shreyas.gaikwad@.utexas.edu>
 
@@ -64,6 +66,7 @@ RUN pip3 install pytest
 
 # Alias python3 as python
 RUN echo "alias python=/usr/bin/python3" >> ~/.bash_profile
+RUN source ~/.bash_profile
 
 # Update LD_LIBRARY_PATH for LIS
 ENV LD_LIBRARY_PATH="/lis-2.0.30/installation/lib:$LD_LIBRARY_PATH" 
