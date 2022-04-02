@@ -26,7 +26,8 @@ RUN dnf -y install gnu8-compilers-ohpc
 RUN dnf -y install gsl-gnu8-ohpc hdf5-gnu8-ohpc
 RUN dnf -y install openmpi-devel
 RUN dnf -y install bc wget zlib-devel perl-Digest-MD5
-RUN dnf -y --enablerepo="epel" install netcdf-devel netcdf-fortran-devel
+RUN dnf -y --enablerepo=powertools install netcdf-fortran netcdf-devel
+RUN dnf -y install netcdf-fortran-devel
 RUN dnf -y install java-11-openjdk-devel
 RUN dnf -y install gnuplot gdb glibc
 RUN dnf -y install unzip
@@ -49,12 +50,12 @@ RUN tar -xvzf sicopolis_v51.tgz
 
 # Tapenade - https://sites.google.com/a/cfdlab.net/nuwtun/tapenade
 # Luckily, JAVA_HOME need not be explicitly set.
-WORKDIR /
-RUN wget http://www-sop.inria.fr/ecuador/tapenade/distrib/tapenade_3.16.tar
-RUN tar xvfz tapenade_3.16.tar
-ENV TAPENADE_HOME=/tapenade_3.16
-ENV PATH=$PATH:$TAPENADE_HOME/bin
-RUN source $HOME/.bashrc 
+#WORKDIR /
+#RUN wget http://www-sop.inria.fr/ecuador/tapenade/distrib/tapenade_3.16.tar
+#RUN tar xvfz tapenade_3.16.tar
+#ENV TAPENADE_HOME=/tapenade_3.16
+#ENV PATH=$PATH:$TAPENADE_HOME/bin
+#RUN source $HOME/.bashrc 
 
 
 # Python
