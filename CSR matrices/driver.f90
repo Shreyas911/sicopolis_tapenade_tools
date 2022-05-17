@@ -21,11 +21,15 @@ program driver
 	allocate (b_index(nnz))             
 	allocate (A_normal(nmax,nmax))
 	allocate (B_normal(nmax,nmax))
-	a_ptr = (/1,4,7,10/)
-	a_index  = (/1,2,3,1,2,3,1,2,3/)
-	a_value = (/1,2,3,4,5,6,7,8,9/)
-	
-
+	!a_ptr = (/1,4,7,10/)
+	!a_index  = (/1,2,3,1,2,3,1,2,3/)
+	!a_value = (/1,2,3,4,5,6,7,8,9/)
+	!a_value = (/1., 1., 1., 1./)
+        !a_ptr = (/1, 3, 4, 5/)
+        !a_index = (/1, 2, 2, 3/)
+	a_value = (/1., 2., 3., 4., 5., 6., 7., 8., 10./)
+        a_ptr = (/1, 4, 7, 10/)
+        a_index = (/1, 2, 3, 1, 2, 3, 1, 2, 3/)
 	!-------------------------------------------------------
 	!! We aim to validate that the transpose_csr_no_diagonal
 	!! subroutine works correctly.
