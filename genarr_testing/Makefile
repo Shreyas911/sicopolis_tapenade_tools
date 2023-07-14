@@ -1,6 +1,7 @@
 target: test
 
 test: driver.o CTRL_SIZE.h
+	gfortran -o $@ $<
 
 %.o: %.F90
 	gfortran -o $@ -c $<
@@ -10,4 +11,4 @@ test: driver.o CTRL_SIZE.h
 .PHONY: clean
 
 clean:
-	$(RM) $(EXEC) *.o $(MOD) $(MSG) *.msg *.mod *_db.f90 *_b.f90 *_d.f90 *~
+	$(RM) test *.o *.gch *.msg *.mod *_db.f90 *_b.f90 *_d.f90 *~
