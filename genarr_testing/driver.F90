@@ -25,6 +25,12 @@ do i=1, NUM_CTRL
                 read (unit=weights_aux(i),fmt=*) weights(i)
   
         end if
+        
+        if (weights_aux(i) .EQ. '1.0') then
+        
+                print *, "YAYAY!"
+
+        end if
 
         if (bounds_aux(i) .NE. ' ') then
 
